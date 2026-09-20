@@ -1,401 +1,798 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>دکوکاب | DECOCAB</title>
+<title>دکوکاب | DECOCAB</title>
 
-  <meta name="description" content="دکوکاب | طراحی و اجرای کابینت و دکوراسیون داخلی">
+<meta name="description"
+content="دکوکاب | طراحی و اجرای کابینت و دکوراسیون داخلی">
 
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Tahoma,Arial,sans-serif;
+    background:#0b0b0b;
+    color:#fff;
+    line-height:1.8;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+/* ---------------- HEADER ---------------- */
+
+.hero{
+    min-height:100vh;
+    position:relative;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.35),
+        rgba(0,0,0,.78)
+    ),
+    url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1800&q=90");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content{
+    width:92%;
+    max-width:700px;
+}
+
+.logo{
+    width:120px;
+    height:120px;
+    border:1px solid #d9b85c;
+    border-radius:50%;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    background:rgba(0,0,0,.45);
+    backdrop-filter:blur(8px);
+    box-shadow:0 0 45px rgba(217,184,92,.2);
+}
+
+.logo-fa{
+    font-size:28px;
+    font-weight:bold;
+    color:#e0c36a;
+}
+
+.logo-en{
+    direction:ltr;
+    font-size:11px;
+    letter-spacing:4px;
+    color:#ddd;
+}
+
+.hero h1{
+    font-size:48px;
+    margin-top:28px;
+}
+
+.hero .en{
+    direction:ltr;
+    color:#d9b85c;
+    letter-spacing:8px;
+    font-size:16px;
+}
+
+.hero p{
+    margin-top:20px;
+    font-size:17px;
+    color:#eee;
+}
+
+.hero-buttons{
+    margin-top:35px;
+    display:flex;
+    gap:12px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:14px 28px;
+    border-radius:30px;
+    border:1px solid #d9b85c;
+    background:rgba(0,0,0,.55);
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#d9b85c;
+    color:#111;
+}
+
+/* ---------------- GENERAL ---------------- */
+
+section{
+    padding:90px 20px;
+    position:relative;
+    overflow:hidden;
+}
+
+.section-container{
+    max-width:1100px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:50px;
+}
+
+.section-title h2{
+    font-size:32px;
+    color:#fff;
+}
+
+.section-title span{
+    display:block;
+    margin-top:8px;
+    color:#d9b85c;
+    direction:ltr;
+    letter-spacing:4px;
+    font-size:12px;
+}
+
+/* ---------------- ABOUT ---------------- */
+
+.about{
+    background:
+    linear-gradient(
+        rgba(10,10,10,.88),
+        rgba(10,10,10,.92)
+    ),
+    url("https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1800&q=85");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+}
+
+.about-box{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+}
+
+.about-text{
+    background:rgba(0,0,0,.5);
+    padding:35px;
+    border:1px solid rgba(217,184,92,.3);
+    border-radius:25px;
+    backdrop-filter:blur(8px);
+}
+
+.about-text h3{
+    color:#d9b85c;
+    font-size:24px;
+    margin-bottom:15px;
+}
+
+.about-text p{
+    color:#ddd;
+}
+
+.about-image{
+    min-height:350px;
+    border-radius:25px;
+
+    background:
+    url("https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&w=1200&q=85");
+
+    background-size:cover;
+    background-position:center;
+
+    border:1px solid rgba(217,184,92,.4);
+}
+
+/* ---------------- SERVICES ---------------- */
+
+.services{
+    background:#0d0d0d;
+}
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.service{
+    min-height:270px;
+    padding:30px;
+    display:flex;
+    flex-direction:column;
+    justify-content:flex-end;
+
+    border-radius:22px;
+    overflow:hidden;
+    position:relative;
+
+    background-size:cover;
+    background-position:center;
+
+    border:1px solid rgba(255,255,255,.15);
+}
+
+.service::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(
+        transparent 15%,
+        rgba(0,0,0,.9)
+    );
+}
+
+.service-content{
+    position:relative;
+    z-index:2;
+}
+
+.service h3{
+    color:#d9b85c;
+    font-size:21px;
+}
+
+.service p{
+    color:#ddd;
+    font-size:13px;
+}
+
+.service:nth-child(1){
+    background-image:url("https://images.unsplash.com/photo-1556912167-f556f1f39fdf?auto=format&fit=crop&w=1000&q=85");
+}
+
+.service:nth-child(2){
+    background-image:url("https://images.unsplash.com/photo-1556912173-46c336c7fd55?auto=format&fit=crop&w=1000&q=85");
+}
+
+.service:nth-child(3){
+    background-image:url("https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=85");
+}
+
+/* ---------------- FEATURE ---------------- */
+
+.feature{
+    min-height:500px;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.55),
+        rgba(0,0,0,.88)
+    ),
+    url("https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?auto=format&fit=crop&w=1800&q=90");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+
+    display:flex;
+    align-items:center;
+}
+
+.feature-content{
+    max-width:650px;
+}
+
+.feature h2{
+    font-size:40px;
+    margin-bottom:20px;
+}
+
+.feature h2 span{
+    color:#d9b85c;
+}
+
+.feature p{
+    color:#ddd;
+    font-size:16px;
+}
+
+/* ---------------- PORTFOLIO ---------------- */
+
+.portfolio{
+    background:
+    linear-gradient(
+        rgba(10,10,10,.9),
+        rgba(10,10,10,.9)
+    ),
+    url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1800&q=80");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.portfolio-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:15px;
+}
+
+.project{
+    height:300px;
+    border-radius:20px;
+    overflow:hidden;
+    position:relative;
+
+    background-size:cover;
+    background-position:center;
+
+    transition:.4s;
+}
+
+.project:hover{
+    transform:scale(1.025);
+}
+
+.project::after{
+    content:"مشاهده پروژه";
+    position:absolute;
+    bottom:0;
+    right:0;
+    left:0;
+    padding:20px;
+    text-align:center;
+
+    background:linear-gradient(
+        transparent,
+        rgba(0,0,0,.9)
+    );
+
+    color:#fff;
+}
+
+.project:nth-child(1){
+    background-image:url("https://images.unsplash.com/photo-1556912172-45b7abe8b7e1?auto=format&fit=crop&w=1000&q=85");
+}
+
+.project:nth-child(2){
+    background-image:url("https://images.unsplash.com/photo-1556911220-e15b29be8c8f?auto=format&fit=crop&w=1000&q=85");
+}
+
+.project:nth-child(3){
+    background-image:url("https://images.unsplash.com/photo-1600566753051-4b5b4a1d1f3d?auto=format&fit=crop&w=1000&q=85");
+}
+
+.project:nth-child(4){
+    background-image:url("https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?auto=format&fit=crop&w=1000&q=85");
+}
+
+.project:nth-child(5){
+    background-image:url("https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1000&q=85");
+}
+
+.project:nth-child(6){
+    background-image:url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1000&q=85");
+}
+
+/* ---------------- VIDEO ---------------- */
+
+.video-section{
+    background:
+    linear-gradient(
+        rgba(0,0,0,.82),
+        rgba(0,0,0,.92)
+    ),
+    url("https://images.unsplash.com/photo-1600607688969-a5bfcd646154?auto=format&fit=crop&w=1800&q=85");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.video-box{
+    max-width:800px;
+    margin:auto;
+    aspect-ratio:16/9;
+    border-radius:25px;
+    overflow:hidden;
+    border:1px solid rgba(217,184,92,.5);
+    background:#111;
+}
+
+.video-box video{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* ---------------- CONTACT ---------------- */
+
+.contact{
+    text-align:center;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,.72),
+        rgba(0,0,0,.9)
+    ),
+    url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1800&q=85");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.contact h2{
+    font-size:35px;
+}
+
+.contact p{
+    color:#ddd;
+    margin:15px 0 30px;
+}
+
+.contact-buttons{
+    display:flex;
+    justify-content:center;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+/* ---------------- FOOTER ---------------- */
+
+footer{
+    padding:35px 20px;
+    text-align:center;
+    background:#050505;
+    color:#999;
+    font-size:12px;
+}
+
+footer strong{
+    color:#d9b85c;
+}
+
+/* ---------------- MOBILE ---------------- */
+
+@media(max-width:750px){
+
+    .hero h1{
+        font-size:38px;
     }
 
-    body {
-      font-family: Tahoma, Arial, sans-serif;
-      background: #111;
-      color: #fff;
-      min-height: 100vh;
+    .hero p{
+        font-size:14px;
     }
 
-    .page {
-      min-height: 100vh;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      padding: 25px 16px;
-      overflow: hidden;
-
-      background:
-        linear-gradient(
-          rgba(0,0,0,0.58),
-          rgba(0,0,0,0.78)
-        ),
-        url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1600&q=85");
-
-      background-size: cover;
-      background-position: center;
-      background-attachment: fixed;
+    .about-box{
+        grid-template-columns:1fr;
     }
 
-    .container {
-      width: 100%;
-      max-width: 430px;
-      text-align: center;
-      position: relative;
-      z-index: 2;
+    .service-grid{
+        grid-template-columns:1fr;
     }
 
-    /* LOGO */
-
-    .logo-box {
-      width: 92px;
-      height: 92px;
-      margin: 0 auto 18px;
-
-      border: 1px solid rgba(212,175,55,0.8);
-      border-radius: 50%;
-
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-
-      background: rgba(20,20,20,0.65);
-      backdrop-filter: blur(8px);
-
-      box-shadow:
-        0 0 30px rgba(212,175,55,0.15);
+    .portfolio-grid{
+        grid-template-columns:1fr 1fr;
     }
 
-    .logo-fa {
-      font-size: 24px;
-      font-weight: bold;
-      color: #d9b85c;
+    .project{
+        height:220px;
     }
 
-    .logo-en {
-      font-size: 11px;
-      letter-spacing: 3px;
-      color: #ddd;
-      margin-top: 4px;
-      direction: ltr;
+    .feature h2{
+        font-size:31px;
     }
 
-    h1 {
-      font-size: 32px;
-      margin-bottom: 7px;
-      color: #fff;
-      font-weight: 700;
+}
+
+@media(max-width:450px){
+
+    section{
+        padding:70px 15px;
     }
 
-    .english {
-      direction: ltr;
-      font-size: 14px;
-      letter-spacing: 5px;
-      color: #d9b85c;
-      margin-bottom: 18px;
+    .logo{
+        width:100px;
+        height:100px;
     }
 
-    .subtitle {
-      font-size: 15px;
-      line-height: 2;
-      color: #eee;
-      margin-bottom: 25px;
+    .logo-fa{
+        font-size:23px;
     }
 
-    /* BUTTONS */
-
-    .buttons {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin-bottom: 22px;
+    .hero h1{
+        font-size:32px;
     }
 
-    .button {
-      min-height: 62px;
-
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-
-      text-decoration: none;
-      color: #fff;
-
-      border: 1px solid rgba(217,184,92,0.55);
-      border-radius: 15px;
-
-      background: rgba(20,20,20,0.62);
-      backdrop-filter: blur(10px);
-
-      transition: all 0.25s ease;
-
-      box-shadow:
-        0 8px 25px rgba(0,0,0,0.25);
+    .hero .en{
+        font-size:12px;
+        letter-spacing:5px;
     }
 
-    .button:hover {
-      transform: translateY(-3px);
-      background: rgba(217,184,92,0.16);
-      border-color: #d9b85c;
+    .hero-buttons{
+        flex-direction:column;
     }
 
-    .button .icon {
-      font-size: 22px;
-      margin-bottom: 5px;
+    .btn{
+        width:100%;
     }
 
-    .button .title {
-      font-size: 14px;
-      font-weight: bold;
+    .portfolio-grid{
+        grid-template-columns:1fr;
     }
 
-    .button .small {
-      font-size: 10px;
-      color: #bbb;
-      margin-top: 3px;
+    .project{
+        height:270px;
     }
 
-    /* INSTAGRAM */
+}
 
-    .instagram {
-      width: 100%;
-      display: block;
-
-      padding: 15px 10px;
-
-      border-radius: 15px;
-
-      background: linear-gradient(
-        135deg,
-        rgba(217,184,92,0.25),
-        rgba(20,20,20,0.72)
-      );
-
-      border: 1px solid rgba(217,184,92,0.65);
-
-      color: #fff;
-      text-decoration: none;
-
-      margin-bottom: 22px;
-
-      font-weight: bold;
-      font-size: 14px;
-    }
-
-    /* QR */
-
-    .qr-area {
-      width: 180px;
-      height: 180px;
-
-      margin: 0 auto 18px;
-
-      background: rgba(255,255,255,0.96);
-
-      border-radius: 18px;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      border: 4px solid rgba(217,184,92,0.85);
-
-      box-shadow:
-        0 10px 40px rgba(0,0,0,0.35);
-    }
-
-    .qr-placeholder {
-      color: #333;
-      font-size: 13px;
-      line-height: 1.8;
-    }
-
-    .qr-placeholder strong {
-      display: block;
-      font-size: 20px;
-      letter-spacing: 2px;
-      margin-bottom: 4px;
-    }
-
-    .qr-text {
-      font-size: 12px;
-      color: #ddd;
-      margin-bottom: 20px;
-    }
-
-    /* CONTACT */
-
-    .contact {
-      display: block;
-
-      padding: 14px;
-
-      border-radius: 14px;
-
-      background: #d9b85c;
-      color: #171717;
-
-      text-decoration: none;
-
-      font-weight: bold;
-      font-size: 15px;
-
-      margin-bottom: 25px;
-
-      box-shadow:
-        0 8px 25px rgba(0,0,0,0.25);
-    }
-
-    /* FOOTER */
-
-    footer {
-      font-size: 10px;
-      color: #aaa;
-      line-height: 1.8;
-    }
-
-    /* MOBILE */
-
-    @media (max-width: 380px) {
-
-      .page {
-        padding: 20px 12px;
-      }
-
-      .logo-box {
-        width: 82px;
-        height: 82px;
-      }
-
-      h1 {
-        font-size: 28px;
-      }
-
-      .subtitle {
-        font-size: 13px;
-      }
-
-      .button {
-        min-height: 58px;
-      }
-
-      .qr-area {
-        width: 160px;
-        height: 160px;
-      }
-    }
-
-  </style>
+</style>
 </head>
 
 <body>
 
-  <main class="page">
+<!-- HERO -->
 
-    <div class="container">
+<header class="hero">
 
-      <!-- LOGO -->
+<div class="hero-content">
 
-      <div class="logo-box">
-        <div class="logo-fa">دکوکاب</div>
-        <div class="logo-en">DECOCAB</div>
-      </div>
+<div class="logo">
+<div class="logo-fa">دکوکاب</div>
+<div class="logo-en">DECOCAB</div>
+</div>
 
-      <h1>دکوکاب</h1>
+<h1>دکوکاب</h1>
 
-      <div class="english">
-        DECOCAB
-      </div>
+<div class="en">DECOCAB</div>
 
-      <p class="subtitle">
-        طراحی و اجرای کابینت و دکوراسیون داخلی
-        <br>
-        با طراحی اختصاصی و اجرای حرفه‌ای
-      </p>
+<p>
+طراحی و اجرای کابینت و دکوراسیون داخلی
+<br>
+ترکیب زیبایی، کیفیت و اجرای حرفه‌ای
+</p>
 
+<div class="hero-buttons">
 
-      <!-- BUTTONS -->
+<a href="#portfolio" class="btn">
+مشاهده نمونه‌کارها
+</a>
 
-      <div class="buttons">
+<a href="#contact" class="btn">
+تماس با دکوکاب
+</a>
 
-        <a href="#" class="button">
-          <div class="icon">▣</div>
-          <div class="title">نمونه‌کارها</div>
-          <div class="small">مشاهده پروژه‌ها</div>
-        </a>
+</div>
 
-        <a href="#" class="button">
-          <div class="icon">▤</div>
-          <div class="title">کاتالوگ</div>
-          <div class="small">مشاهده کاتالوگ</div>
-        </a>
+</div>
 
-        <a href="#" class="button">
-          <div class="icon">◎</div>
-          <div class="title">اینستاگرام</div>
-          <div class="small">صفحه اینستاگرام</div>
-        </a>
-
-        <a href="#" class="button">
-          <div class="icon">⌂</div>
-          <div class="title">وب‌سایت</div>
-          <div class="small">سایت رسمی دکوکاب</div>
-        </a>
-
-      </div>
+</header>
 
 
-      <!-- INSTAGRAM -->
+<!-- ABOUT -->
 
-      <a href="#" class="instagram">
-        ✦ مشاهده صفحه اینستاگرام دکوکاب
-      </a>
+<section class="about">
+
+<div class="section-container">
+
+<div class="section-title">
+<h2>دکوکاب؛ فراتر از یک کابینت</h2>
+<span>ABOUT DECOCAB</span>
+</div>
+
+<div class="about-box">
+
+<div class="about-text">
+
+<h3>طراحی برای سبک زندگی شما</h3>
+
+<p>
+در دکوکاب، هر فضا با توجه به سبک زندگی،
+نیاز و سلیقه شما طراحی می‌شود.
+از طراحی اولیه تا اجرای نهایی،
+جزئیات با دقت و نگاه حرفه‌ای بررسی می‌شوند.
+</p>
+
+</div>
+
+<div class="about-image"></div>
+
+</div>
+
+</div>
+
+</section>
 
 
-      <!-- QR CODE -->
+<!-- SERVICES -->
 
-      <div class="qr-area">
+<section class="services">
 
-        <div class="qr-placeholder">
-          <strong>QR CODE</strong>
-          جای QR کد
-          <br>
-          دکوکاب
-        </div>
+<div class="section-container">
 
-      </div>
+<div class="section-title">
+<h2>خدمات دکوکاب</h2>
+<span>OUR SERVICES</span>
+</div>
 
-      <div class="qr-text">
-        برای دسترسی سریع، QR Code را اسکن کنید
-      </div>
+<div class="service-grid">
+
+<div class="service">
+<div class="service-content">
+<h3>طراحی کابینت</h3>
+<p>طراحی اختصاصی متناسب با فضای شما</p>
+</div>
+</div>
+
+<div class="service">
+<div class="service-content">
+<h3>اجرای کابینت</h3>
+<p>اجرای دقیق و حرفه‌ای پروژه</p>
+</div>
+</div>
+
+<div class="service">
+<div class="service-content">
+<h3>دکوراسیون داخلی</h3>
+<p>خلق فضایی زیبا و هماهنگ</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
 
 
-      <!-- CONTACT -->
+<!-- FEATURE -->
 
-      <a href="tel:" class="contact">
-        ☎ تماس با دکوکاب
-      </a>
+<section class="feature">
+
+<div class="section-container">
+
+<div class="feature-content">
+
+<h2>
+فضایی که
+<span>خاص شماست</span>
+</h2>
+
+<p>
+ما باور داریم کابینت فقط بخشی از آشپزخانه نیست؛
+بلکه یکی از مهم‌ترین عناصر زیبایی و کاربردی فضای خانه است.
+برای همین هر پروژه را با توجه به معماری و سلیقه صاحب آن اجرا می‌کنیم.
+</p>
+
+</div>
+
+</div>
+
+</section>
 
 
-      <!-- FOOTER -->
+<!-- PORTFOLIO -->
 
-      <footer>
-        طراحی و اجرای کابینت و دکوراسیون داخلی
-        <br>
-        © 2026 DECOCAB
-      </footer>
+<section class="portfolio" id="portfolio">
 
-    </div>
+<div class="section-container">
 
-  </main>
+<div class="section-title">
+
+<h2>نمونه‌کارهای دکوکاب</h2>
+
+<span>OUR PROJECTS</span>
+
+</div>
+
+<div class="portfolio-grid">
+
+<div class="project"></div>
+<div class="project"></div>
+<div class="project"></div>
+<div class="project"></div>
+<div class="project"></div>
+<div class="project"></div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- VIDEO -->
+
+<section class="video-section">
+
+<div class="section-container">
+
+<div class="section-title">
+
+<h2>پروژه‌ها را ببینید</h2>
+
+<span>PROJECT VIDEO</span>
+
+</div>
+
+<div class="video-box">
+
+<!-- بعداً آدرس ویدئوی خودت را اینجا قرار می‌دهیم -->
+
+<video controls poster="">
+<source src="" type="video/mp4">
+مرورگر شما از پخش ویدئو پشتیبانی نمی‌کند.
+</video>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section class="contact" id="contact">
+
+<div class="section-container">
+
+<h2>با دکوکاب در ارتباط باشید</h2>
+
+<p>
+برای مشاوره، طراحی و اجرای پروژه با ما تماس بگیرید.
+</p>
+
+<div class="contact-buttons">
+
+<a href="#" class="btn">
+اینستاگرام
+</a>
+
+<a href="tel:" class="btn">
+تماس تلفنی
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<strong>DECOCAB</strong>
+
+<br>
+
+طراحی و اجرای کابینت و دکوراسیون داخلی
+
+<br><br>
+
+© 2026 DECOCAB
+
+</footer>
 
 </body>
 </html>
