@@ -4,10 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>دکوکاب | طراحی و اجرای کابینت</title>
+  <title>دکوکاب | DECOCAB</title>
 
-  <meta name="description"
-        content="دکوکاب | طراحی و اجرای کابینت و دکوراسیون داخلی">
+  <meta name="description" content="دکوکاب | طراحی و اجرای کابینت و دکوراسیون داخلی">
 
   <style>
     * {
@@ -18,301 +17,385 @@
 
     body {
       font-family: Tahoma, Arial, sans-serif;
-      min-height: 100vh;
+      background: #111;
       color: #fff;
-      background:
-        radial-gradient(circle at 20% 10%, rgba(198,161,72,.16), transparent 30%),
-        radial-gradient(circle at 90% 90%, rgba(198,161,72,.10), transparent 30%),
-        #0a0a0a;
+      min-height: 100vh;
     }
 
     .page {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 25px 16px;
+      overflow: hidden;
+
+      background:
+        linear-gradient(
+          rgba(0,0,0,0.58),
+          rgba(0,0,0,0.78)
+        ),
+        url("https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?auto=format&fit=crop&w=1600&q=85");
+
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+    }
+
+    .container {
       width: 100%;
-      max-width: 560px;
-      margin: auto;
-      padding: 20px 16px 35px;
-    }
-
-    .hero {
+      max-width: 430px;
       text-align: center;
-      padding: 42px 20px 28px;
+      position: relative;
+      z-index: 2;
     }
 
-    .logo {
-      width: 118px;
-      height: 118px;
-      margin: 0 auto 20px;
+    /* LOGO */
+
+    .logo-box {
+      width: 92px;
+      height: 92px;
+      margin: 0 auto 18px;
+
+      border: 1px solid rgba(212,175,55,0.8);
       border-radius: 50%;
 
       display: flex;
+      flex-direction: column;
       align-items: center;
       justify-content: center;
 
-      background: linear-gradient(145deg, #f2d47b, #8f691d);
-      color: #111;
-
-      font-size: 25px;
-      font-weight: bold;
-
-      border: 4px solid rgba(255,255,255,.12);
+      background: rgba(20,20,20,0.65);
+      backdrop-filter: blur(8px);
 
       box-shadow:
-        0 15px 40px rgba(0,0,0,.55),
-        0 0 40px rgba(210,175,70,.15);
+        0 0 30px rgba(212,175,55,0.15);
+    }
+
+    .logo-fa {
+      font-size: 24px;
+      font-weight: bold;
+      color: #d9b85c;
+    }
+
+    .logo-en {
+      font-size: 11px;
+      letter-spacing: 3px;
+      color: #ddd;
+      margin-top: 4px;
+      direction: ltr;
     }
 
     h1 {
-      font-size: 34px;
-      margin-bottom: 8px;
+      font-size: 32px;
+      margin-bottom: 7px;
+      color: #fff;
+      font-weight: 700;
     }
 
-    .brand {
+    .english {
       direction: ltr;
-      letter-spacing: 6px;
-      font-size: 13px;
-      color: #d7b65b;
+      font-size: 14px;
+      letter-spacing: 5px;
+      color: #d9b85c;
       margin-bottom: 18px;
     }
 
-    .intro {
-      color: #c8c8c8;
-      line-height: 2;
+    .subtitle {
       font-size: 15px;
+      line-height: 2;
+      color: #eee;
+      margin-bottom: 25px;
     }
 
-    .section {
-      margin-top: 20px;
-    }
+    /* BUTTONS */
 
-    .section-title {
-      text-align: right;
-      font-size: 14px;
-      color: #b99a4c;
-      margin: 0 8px 10px;
-    }
-
-    .grid {
+    .buttons {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 12px;
+      margin-bottom: 22px;
     }
 
-    .card {
-      min-height: 105px;
-      padding: 20px 12px;
+    .button {
+      min-height: 62px;
 
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
 
-      text-align: center;
       text-decoration: none;
       color: #fff;
 
-      border-radius: 18px;
+      border: 1px solid rgba(217,184,92,0.55);
+      border-radius: 15px;
 
-      background: linear-gradient(
-        145deg,
-        rgba(255,255,255,.085),
-        rgba(255,255,255,.025)
-      );
+      background: rgba(20,20,20,0.62);
+      backdrop-filter: blur(10px);
 
-      border: 1px solid rgba(255,255,255,.10);
+      transition: all 0.25s ease;
 
       box-shadow:
-        0 10px 30px rgba(0,0,0,.25);
-
-      transition: .2s ease;
+        0 8px 25px rgba(0,0,0,0.25);
     }
 
-    .card:hover {
-      transform: translateY(-4px);
-      border-color: rgba(215,182,91,.55);
-      background: rgba(215,182,91,.08);
+    .button:hover {
+      transform: translateY(-3px);
+      background: rgba(217,184,92,0.16);
+      border-color: #d9b85c;
     }
 
-    .card .icon {
-      font-size: 28px;
-      margin-bottom: 9px;
-    }
-
-    .card strong {
-      font-size: 15px;
+    .button .icon {
+      font-size: 22px;
       margin-bottom: 5px;
     }
 
-    .card span {
-      color: #999;
-      font-size: 11px;
+    .button .title {
+      font-size: 14px;
+      font-weight: bold;
     }
 
-    .wide {
-      grid-column: 1 / -1;
+    .button .small {
+      font-size: 10px;
+      color: #bbb;
+      margin-top: 3px;
     }
 
-    .social {
-      margin-top: 14px;
+    /* INSTAGRAM */
+
+    .instagram {
+      width: 100%;
+      display: block;
+
+      padding: 15px 10px;
+
+      border-radius: 15px;
+
+      background: linear-gradient(
+        135deg,
+        rgba(217,184,92,0.25),
+        rgba(20,20,20,0.72)
+      );
+
+      border: 1px solid rgba(217,184,92,0.65);
+
+      color: #fff;
+      text-decoration: none;
+
+      margin-bottom: 22px;
+
+      font-weight: bold;
+      font-size: 14px;
     }
 
-    .social a {
+    /* QR */
+
+    .qr-area {
+      width: 180px;
+      height: 180px;
+
+      margin: 0 auto 18px;
+
+      background: rgba(255,255,255,0.96);
+
+      border-radius: 18px;
+
       display: flex;
       align-items: center;
       justify-content: center;
 
-      width: 100%;
-      min-height: 54px;
+      border: 4px solid rgba(217,184,92,0.85);
 
-      border-radius: 15px;
-
-      text-decoration: none;
-
-      color: #171717;
-      font-size: 15px;
-      font-weight: bold;
-
-      background: linear-gradient(
-        135deg,
-        #f0d477,
-        #a47a20
-      );
-
-      box-shadow: 0 10px 30px rgba(198,161,72,.16);
+      box-shadow:
+        0 10px 40px rgba(0,0,0,0.35);
     }
+
+    .qr-placeholder {
+      color: #333;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .qr-placeholder strong {
+      display: block;
+      font-size: 20px;
+      letter-spacing: 2px;
+      margin-bottom: 4px;
+    }
+
+    .qr-text {
+      font-size: 12px;
+      color: #ddd;
+      margin-bottom: 20px;
+    }
+
+    /* CONTACT */
 
     .contact {
-      margin-top: 12px;
-    }
-
-    .contact a {
       display: block;
-      text-align: center;
-      padding: 15px;
 
-      color: #ddd;
+      padding: 14px;
+
+      border-radius: 14px;
+
+      background: #d9b85c;
+      color: #171717;
+
       text-decoration: none;
 
-      border-radius: 15px;
+      font-weight: bold;
+      font-size: 15px;
 
-      background: rgba(255,255,255,.045);
-      border: 1px solid rgba(255,255,255,.08);
+      margin-bottom: 25px;
+
+      box-shadow:
+        0 8px 25px rgba(0,0,0,0.25);
     }
+
+    /* FOOTER */
 
     footer {
-      text-align: center;
-      margin-top: 28px;
-      color: #666;
-      font-size: 11px;
+      font-size: 10px;
+      color: #aaa;
+      line-height: 1.8;
     }
 
-    footer b {
-      color: #b8953c;
-    }
+    /* MOBILE */
 
-    @media (max-width: 390px) {
+    @media (max-width: 380px) {
+
+      .page {
+        padding: 20px 12px;
+      }
+
+      .logo-box {
+        width: 82px;
+        height: 82px;
+      }
+
       h1 {
-        font-size: 30px;
+        font-size: 28px;
       }
 
-      .grid {
-        gap: 9px;
+      .subtitle {
+        font-size: 13px;
       }
 
-      .card {
-        min-height: 100px;
+      .button {
+        min-height: 58px;
+      }
+
+      .qr-area {
+        width: 160px;
+        height: 160px;
       }
     }
+
   </style>
 </head>
 
 <body>
 
-<div class="page">
+  <main class="page">
 
-  <header class="hero">
+    <div class="container">
 
-    <!-- لوگوی واقعی بعداً اینجا قرار می‌گیرد -->
-    <div class="logo">
-      دکوکاب
-    </div>
+      <!-- LOGO -->
 
-    <h1>دکوکاب</h1>
+      <div class="logo-box">
+        <div class="logo-fa">دکوکاب</div>
+        <div class="logo-en">DECOCAB</div>
+      </div>
 
-    <div class="brand">
-      DECOCAB
-    </div>
+      <h1>دکوکاب</h1>
 
-    <p class="intro">
-      طراحی و اجرای کابینت و دکوراسیون داخلی
-      <br>
-      با طراحی اختصاصی و اجرای حرفه‌ای
-    </p>
+      <div class="english">
+        DECOCAB
+      </div>
 
-  </header>
+      <p class="subtitle">
+        طراحی و اجرای کابینت و دکوراسیون داخلی
+        <br>
+        با طراحی اختصاصی و اجرای حرفه‌ای
+      </p>
 
 
-  <section class="section">
+      <!-- BUTTONS -->
 
-    <div class="section-title">
-      خدمات و اطلاعات دکوکاب
-    </div>
+      <div class="buttons">
 
-    <div class="grid">
+        <a href="#" class="button">
+          <div class="icon">▣</div>
+          <div class="title">نمونه‌کارها</div>
+          <div class="small">مشاهده پروژه‌ها</div>
+        </a>
 
-      <a class="card" href="#">
-        <div class="icon">▦</div>
-        <strong>نمونه‌کارها</strong>
-        <span>مشاهده پروژه‌های اجرا شده</span>
+        <a href="#" class="button">
+          <div class="icon">▤</div>
+          <div class="title">کاتالوگ</div>
+          <div class="small">مشاهده کاتالوگ</div>
+        </a>
+
+        <a href="#" class="button">
+          <div class="icon">◎</div>
+          <div class="title">اینستاگرام</div>
+          <div class="small">صفحه اینستاگرام</div>
+        </a>
+
+        <a href="#" class="button">
+          <div class="icon">⌂</div>
+          <div class="title">وب‌سایت</div>
+          <div class="small">سایت رسمی دکوکاب</div>
+        </a>
+
+      </div>
+
+
+      <!-- INSTAGRAM -->
+
+      <a href="#" class="instagram">
+        ✦ مشاهده صفحه اینستاگرام دکوکاب
       </a>
 
-      <a class="card" href="#">
-        <div class="icon">▤</div>
-        <strong>کاتالوگ</strong>
-        <span>مشاهده کاتالوگ دکوکاب</span>
+
+      <!-- QR CODE -->
+
+      <div class="qr-area">
+
+        <div class="qr-placeholder">
+          <strong>QR CODE</strong>
+          جای QR کد
+          <br>
+          دکوکاب
+        </div>
+
+      </div>
+
+      <div class="qr-text">
+        برای دسترسی سریع، QR Code را اسکن کنید
+      </div>
+
+
+      <!-- CONTACT -->
+
+      <a href="tel:" class="contact">
+        ☎ تماس با دکوکاب
       </a>
 
-      <a class="card" href="#">
-        <div class="icon">⌂</div>
-        <strong>وب‌سایت</strong>
-        <span>وب‌سایت رسمی دکوکاب</span>
-      </a>
 
-      <a class="card" href="#">
-        <div class="icon">◎</div>
-        <strong>اینستاگرام</strong>
-        <span>صفحه اینستاگرام دکوکاب</span>
-      </a>
+      <!-- FOOTER -->
+
+      <footer>
+        طراحی و اجرای کابینت و دکوراسیون داخلی
+        <br>
+        © 2026 DECOCAB
+      </footer>
 
     </div>
 
-  </section>
-
-
-  <section class="social">
-
-    <a href="#">
-      مشاهده صفحه اینستاگرام دکوکاب
-    </a>
-
-  </section>
-
-
-  <section class="contact">
-
-    <a href="tel:">
-      ☎ &nbsp; تماس با دکوکاب
-    </a>
-
-  </section>
-
-
-  <footer>
-    © 2026 <b>DecoCab</b>
-    <br>
-    طراحی و اجرای کابینت و دکوراسیون داخلی
-  </footer>
-
-</div>
+  </main>
 
 </body>
 </html>
