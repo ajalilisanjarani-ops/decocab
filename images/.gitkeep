@@ -1,1 +1,71 @@
-
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+<title>دکوکاب | DECOCAB</title>
+<meta name="description"
+      content="دکوکاب | طراحی و اجرای کابینت و دکوراسیون داخلی">
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+html,
+body{
+    width:100%;
+    min-height:100%;
+    background:#080808;
+}
+body{
+    font-family:
+    Tahoma,
+    Arial,
+    sans-serif;
+}
+/* صفحه اصلی */
+.home{
+    width:100%;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    background:#080808;
+}
+/* تصویر اصلی */
+.home-image{
+    width:100%;
+    max-width:1200px;
+    height:auto;
+    display:block;
+}
+/* موبایل */
+@media(max-width:600px){
+    .home{
+        width:100%;
+    }
+    .home-image{
+        width:100%;
+        height:auto;
+    }
+}
+/* دسکتاپ */
+@media(min-width:1200px){
+    .home-image{
+        max-width:1200px;
+    }
+}
+</style>
+</head>
+<body>
+<main class="home">
+<img
+    class="home-image"
+    src="images/508BD94C-9135-4269-B016-73703ECE4460.png"
+    alt="دکوکاب - طراحی و اجرای کابینت و دکوراسیون داخلی"
+>
+</main>
+</body>
+</html>
